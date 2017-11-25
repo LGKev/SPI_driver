@@ -1,0 +1,16 @@
+/*
+ * spi_driver.h
+ *
+ *  Created on: Nov 25, 2017
+ *      Author: kevin
+ */
+
+#ifndef SPI_DRIVER_H_
+#define SPI_DRIVER_H_
+
+/*
+ * @brief: Configures EUSCI_A0 for SPI
+ * */
+
+
+#endif /* SPI_DRIVER_H_ */

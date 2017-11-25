@@ -1,0 +1,18 @@
+/*
+ * spi_driver.h
+ *
+ *  Created on: Nov 25, 2017
+ *      Author: kevin
+ */
+
+#ifndef SPI_DRIVER_H_
+#define SPI_DRIVER_H_
+
+/*
+ * @name: Configure 3 Wire Spi
+ * @brief: Configures EUSCI_A0 for SPI 3 wire
+ *
+ * */
+
+
+#endif /* SPI_DRIVER_H_ */

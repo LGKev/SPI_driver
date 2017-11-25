@@ -1,0 +1,55 @@
+/*
+ * GPIO.C
+ *
+ *  Created on: Nov 25, 2017
+ *      Author: kevin
+ */
+
+#include "GPIO.h"
+#include "spi_driver.h"
+#include "ssd1331_Driver.h"
+
+/*  EPAPER
+ *=============
+ * @name: configure SPI Pins- epaper
+ * @brief: Configures the GPIO pins, for EPAPER display
+ *      CS          P1.0
+ *      RESET       P1.4
+ *      D/C         PULLED LOW FOR 3 WIRE SPI, epaper
+ *      MOSI        P1.3
+ *      CLK         P1.1
+ *
+ *
+ *          @important: use this for the final, currently you don't have access to those pins easily, configure for another SPI port
+ * */
+void configure_epaper_pins();
+
+
+/*  AMAZON SSD1331
+ *=============
+ * @name: configure SPI Pins- Amazon Display
+ * @brief: Configures the GPIO pins, for AMazon display, using pins  on port 10,UCB3
+ *      CS          P4.0
+ *      RESET       P6.1
+ *      D/C         P6.0
+ *      MOSI        P10.2
+ *      CLK         P10.1
+ *
+ * */
+void configure_SSD1331_pins(){
+    P4SEL0 = 0x00;
+    P4SEL1 = 0x00; // for GPIO
+
+    P6SEL0 = 0x00;
+    P6SEL1 = 0x00;
+
+    //primary mode 1,0
+    P10SEL0 = BIT2 | BIT1;
+    P10SEL1 &= ~(BIT2 | BIT1); // set to 0, for primary mode
+
+
+    //Pin Output/Input
+
+
+}
+
