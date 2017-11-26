@@ -12,13 +12,16 @@ void main(void)
 	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
 
 	configure_3_Wire_SPI_OLED();
-
+	initialize_Display();
 
     __enable_irq();
 
+    fillRect_HW(0, 0, 100, 30, 0x07E0);
 
 
 	while(1){
-	    write_data(0b10010000); //can see on scope
+//    write_data(0b10010000); //can see on scope/
+	    fillRect_HW(0, 0, 100, 30, 0x07E0);
+
 	}
 }

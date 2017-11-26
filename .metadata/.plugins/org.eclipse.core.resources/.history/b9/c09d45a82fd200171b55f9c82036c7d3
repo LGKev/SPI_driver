@@ -1,0 +1,41 @@
+/*
+ * ssd1331_Driver.c
+ *
+ *  Created on: Nov 25, 2017
+ *      Author: kevin
+ */
+
+#include "ssd1331_Driver.h"
+#include "msp.h"
+#include "GPIO.h"
+
+void write_data(uint8_t _data){
+        //CS low, D/C high
+    P4OUT &= ~BIT0;
+    P6OUT |= BIT0;
+    UCB3TXBUF = _data;
+}
+void write_command(uint8_t _command){
+    //CS low, D/C low //:TODO: come back and use the macros
+    P4OUT &= ~BIT0;
+    P6OUT &= ~BIT0;
+    UCB3TXBUF = _command;
+}
+
+
+void initialize_Display(){
+    write_command(CMD_SET_DISPLAY_OFF_SLEEP);
+    write_command(CMD_REMAP);
+    write_command(0x72); //if colors are crazy change this to be 0x76
+    write_command(CMD_SET_DISPLAY_LINE);
+    write_command(0x0);
+    write_command(CMD_SET_DISPLAY_OFFSET);
+    write_command(0x0);
+    write_command(CMD_SET_DISPLAY_ON_NORMAL);
+
+
+
+
+
+
+}
