@@ -109,4 +109,5 @@ void initialize_Display();
 void fillRect_HW(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t fillcolor);
 
 
+
 #endif /* SSD1331_DRIVER_H_ */

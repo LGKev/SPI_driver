@@ -21,7 +21,7 @@ void main(void)
 
 	while(1){
 //    write_data(0b10010000); //can see on scope/
-	    fillRect_HW(0, 0, 100, 30, 0x07E0);
-
+	    //fillRect_HW(0, 0, 100, 30, 0x07E0);
+initialize_Display();
 	}
 }

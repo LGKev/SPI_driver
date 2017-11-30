@@ -62,13 +62,37 @@ void initialize_Display(){
     write_command(CMD_MASTER_CURRENT_CTL);
     write_command(0x06);
     write_command(CMD_SET_CONTRAST_FOR_COLOR_A);
-    write_command(0x91);
+    write_command(255);
     write_command(CMD_SET_CONTRAST_FOR_COLOR_B);
-    write_command(0x50);
+    write_command(255);
     write_command(CMD_SET_CONTRAST_FOR_COLOR_C);
-    write_command(0x7D);
+    write_command(255);
+
+
+
+
+
+
+    uint8_t x =0;
+    uint8_t y =0;
+
+    for(x=0; x<200; x++){
+        for(y=0; y< 64; y++){
+            write_data(255);
+            write_data(255);
+            write_data(255);
+
+        }
+    }
+
+
     write_command(CMD_SET_DISPLAY_ON_NORMAL);
+    uint16_t delay;
+    for(delay=0; delay < 1000; delay++);
 }
+
+
+
 
 void fillRect_HW(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t fillcolor){
     x = 128 - x- 1;
